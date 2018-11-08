@@ -1,6 +1,7 @@
 ## 在Android里面下载文件，并在ProgressDialog显示进度
 
 ### 问题
+
 尝试写一个可以进行“应用更新”的APP。为了达到这个效果，我写了一个可以下载文件并且在一个`ProgressDialog`里面显示进度的简单方法。我知道怎么使用`ProgressDialog`，但是我不太确定怎么显示当前进度和下载文件。
 
 ### 回答
@@ -8,9 +9,11 @@
 有很多方式去下载文件。我给出一些最常用的方法；由你来选择选择哪一个最适合你的应用。
 
 #### 1. 使用AsyncTask，并且在一个dialog里面显示进度
+
 这种方法允许你执行一些后台任务，并且同时更新UI（在这里，我们是更新进度条progress bar）。
 
 首先是实例代码
+
 ```java
 // 定义一个dialog为Activity的成员变量
 ProgressDialog mProgressDialog;
@@ -35,6 +38,7 @@ mProgressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
 ```  
 
 `AsyncTask`看起来像这样
+
 ```java
 // 一般我们把AsyncTask的子类定义在Activity的内部
 // 通过这种方式，我们就可以轻松地在这里更改UI线程
@@ -139,7 +143,8 @@ private class DownloadTask extends AsyncTask<String, Integer, String> {
 ```
 
 为了可正常运行，你还要取得WAKE_LOCK权限
-```
+
+```xml
 <uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
 
@@ -198,7 +203,8 @@ public class DownloadService extends IntentService {
 ```  
 
 把这个`Service`添加到清单文件中：  
-```
+
+```xml
 <service android:name=".DownloadService"/>
 ```
 
@@ -238,6 +244,7 @@ private class DownloadReceiver extends ResultReceiver{
 ```
 
 ##### 2.1 使用Groundy库
+
 [Groundy](http://casidiablo.github.com/groundy)是一个可以帮助你在后台服务中运行代码片段的库，它是基于`ResultReceiver`这一概念。但是这个库现在已经被标记为**过时**了（deprecated）。下面是**完整**代码的样子。
 
 你要展示dialog的Activity：
@@ -312,7 +319,8 @@ public class DownloadTask extends GroundyTask {
 ```  
 
 添加这行代码到清单文件中：
-```
+
+```xml
 <service android:name="com.codeslap.groundy.GroundyService"/>
 ```  
 

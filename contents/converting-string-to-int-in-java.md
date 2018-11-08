@@ -7,13 +7,16 @@ Integer x = Integer.valueOf(str);
 // or
 int y = Integer.parseInt(str);
 ```
+
 这两种方式有一点点不同：
+
 - `valueOf`返回的是`java.lang.Integer`的实例
 - `parseInt`返回的是基本数据类型 int
 
 `Short.valueOf/parseShort`,`Long.valueOf/parseLong`等也是有类似差别。
 
 另外还需注意的是，在做int类型转换时，可能会抛出NumberFormatException，因此要做好异常捕获
+
 ```java
 int foo;
 String StringThatCouldBeANumberOrNot = "26263Hello"; //will throw exception

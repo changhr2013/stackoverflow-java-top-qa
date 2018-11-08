@@ -40,11 +40,12 @@
 ### [适配器模式](http://en.wikipedia.org/wiki/Adapter_pattern)
 
 - [java.util.Arrays#asList()](http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#asList%28T...%29)
-- [java.io.InputStreamReader(InputStream) ](http://docs.oracle.com/javase/6/docs/api/java/io/InputStreamReader.html#InputStreamReader%28java.io.InputStream%29)(返回 Reader)
+- [java.io.InputStreamReader(InputStream)](http://docs.oracle.com/javase/6/docs/api/java/io/InputStreamReader.html#InputStreamReader%28java.io.InputStream%29)(返回 Reader)
 - [java.io.OutputStreamWriter(OutputStream)](http://docs.oracle.com/javase/6/docs/api/java/io/OutputStreamWriter.html#OutputStreamWriter%28java.io.OutputStream%29)(返回 Writer)
 - [javax.xml.bind.annotation.adapters.XmlAdapter#marshal()](http://docs.oracle.com/javase/6/docs/api/javax/xml/bind/annotation/adapters/XmlAdapter.html#marshal%28BoundType%29) 和 [#unmarshal()](http://docs.oracle.com/javase/6/docs/api/javax/xml/bind/annotation/adapters/XmlAdapter.html#unmarshal%28ValueType%29)
 
 ### [桥模式](http://en.wikipedia.org/wiki/Bridge_pattern)
+
 暂时没有发现
 
 ### [合成模式](http://en.wikipedia.org/wiki/Composite_pattern)
@@ -146,6 +147,6 @@
 
 - [设计模式-百度百科](http://baike.baidu.com/link?url=_XNWwtm_SeObjikESBkyse_nfXm2HIOOkwJ1XwyVZALLU36AG36DhOMN0Utln5-nJBT6aAplJFOGXCdwQSsm3_)
 
-
 - stackoverflow原址:
+
 http://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns-in-javas-core-libraries

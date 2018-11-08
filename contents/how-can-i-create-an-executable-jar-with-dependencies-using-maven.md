@@ -1,10 +1,10 @@
 ## 如何使用maven把项目及其依赖打包为可运行jar包
 
-#### 问题
+### 问题
 
 我想把java项目打包为可运行的分布式jar包。我该怎样做，才能把项目中maven所依赖的jar包导入到我的项目jar包中？
 
-#### 回答
+### 回答
 
 在`pom.xml`文件中，加入如下的插件：
 
@@ -92,7 +92,6 @@ java -cp jar包的路径/jar包的名字.jar main方法所在类的全限定名
 ```java
 java -cp D:\my_java_project\maven_test.jar com.my.path.MainClass
 ```
-
 
 #### StackOverflow地址
 

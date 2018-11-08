@@ -1,6 +1,7 @@
 ##如何将String转换为enum
 
 ### 问题
+
 假设定义了如下的enum（枚举）：
 
 ```java
@@ -8,11 +9,12 @@ public enum Blah {
     A, B, C, D
 }
 ```
+
 已知枚举对应的String值，希望得到对应的枚举值。例如，已知"A"，希望得到对应的枚举——Blah.A，应该怎么做？  
 Enum.valueOf()是否能实现以上目的，如果是，那我如何使用？
 
-
 ### 答案
+
 是的，Blah.valueOf("A") 将会得到 Blah.A
 
 静态方法valueOf() 和 values() 不存在于源码中，而是在编译时创建，我们也可以在JavaDoc查看到它们，比如 [Dialog.ModalityTyp](http://docs.oracle.com/javase/7/docs/api/java/awt/Dialog.ModalityType.html) 就中出现这两个方法。
@@ -20,6 +22,7 @@ Enum.valueOf()是否能实现以上目的，如果是，那我如何使用？
 ### 其他答案
 
 我有一个挺赞的工具方法：
+
 ```java
 /**
  * A common method for all enums since they can't have another base class
