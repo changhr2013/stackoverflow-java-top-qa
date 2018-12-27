@@ -1,20 +1,22 @@
-##如何获取Android设备唯一ID？
+## 如何获取 Android 设备唯一 ID？
 
-###问题
-每一个android设备都有唯一ID吗？如果有？怎么用java最简单取得呢？
+### 问题
 
-###回答1（最佳）
+每一个 android 设备都有唯一ID吗？如果有？怎么用 java 最简单取得呢？
 
-如何取得android唯一码？
+### 回答1（最佳）
+
+如何取得 android 唯一码？
 
 好处：
-- 1.不需要特定权限.
-- 2.在99.5% Android装置（包括root过的）上，即API => 9，保证唯一性.
-- 3.重装app之后仍能取得相同唯一值.
+
+1. 不需要特定权限.
+2. 在99.5% Android装置（包括root过的）上，即API => 9，保证唯一性.
+3. 重装app之后仍能取得相同唯一值.
 
 伪代码：
 
-```
+```text
 if API => 9/10: (99.5% of devices)
 
 return unique ID containing serial id (rooted devices may be different)
@@ -63,13 +65,17 @@ return unique ID of build information (may overlap data - API < 9)
     // Finally, combine the values we have found by using the UUID class to create a unique identifier
     return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();}
 ```
-###回答2
+
+### 回答2
+
 好处：
-- 1.不需要特定权限.
-- 2.在100% Android装置（包括root过的）上，保证唯一性.
+
+1. 不需要特定权限.
+2. 在100% Android装置（包括root过的）上，保证唯一性.
 
 坏处
-- 1.重装app之后不能取得相同唯一值.
+
+1. 重装app之后不能取得相同唯一值.
 
 ```java
 private static String uniqueID = null;
@@ -91,10 +97,11 @@ public synchronized static String id(Context context) {
 }
 ```
 
-###回答3（需要有电话卡）
+### 回答3（需要有电话卡）
 
 好处：
-1.重装app之后仍能取得相同唯一值.
+
+1. 重装app之后仍能取得相同唯一值.
 
 代码：
 
@@ -109,8 +116,9 @@ public synchronized static String id(Context context) {
 ```
 
 谨记：要取得以下权限
-```
+
+```xml
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
-stackoverflow链接：
-http://stackoverflow.com/questions/2785485/is-there-a-unique-android-device-id
+
+原文地址：[http://stackoverflow.com/questions/2785485/is-there-a-unique-android-device-id](http://stackoverflow.com/questions/2785485/is-there-a-unique-android-device-id)

@@ -1,9 +1,10 @@
-##`Map<Key,Value>`基于Value值排序
+## `Map<Key,Value>` 基于 Value 值排序
 
-###方法1：
-使用TreeMap，可以参考下面的代码
+### 方法1：
+使用 TreeMap，可以参考下面的代码
+
 ```java
-public class Testing {  
+public class Testing {
   
     public static void main(String[] args) {  
   
@@ -41,11 +42,13 @@ class ValueComparator implements Comparator<String> {
     }  
 }  
 ```
-译注：如果不自己写Comparator,treemap默认是用key来排序
 
-###方法2：
+译注：如果不自己写 Comparator,treemap 默认是用 key 来排序
 
-先通过linkedlist排好序，再放到LinkedHashMap中
+### 方法2：
+
+先通过 linkedlist 排好序，再放到 LinkedHashMap 中
+
 ```java
 public class MapUtil  
 {  
@@ -71,7 +74,7 @@ public class MapUtil
     }  
 }  
 ```
-译注：这两种方法，我简单测试了下，如果map的size在十万级别以上，两者的耗时都是几百毫秒，第二个方法会快一些。否则，第一个方法快一些。因此，如果你处理的map，都是几十万级别以下的大小，两种方式随意使用，看个人喜欢了。
 
-stackoverflow链接：
-http://stackoverflow.com/questions/109383/how-to-sort-a-mapkey-value-on-the-values-in-java
+译注：这两种方法，我简单测试了下，如果 map 的 size 在十万级别以上，两者的耗时都是几百毫秒，第二个方法会快一些。否则，第一个方法快一些。因此，如果你处理的 map，都是几十万级别以下的大小，两种方式随意使用，看个人喜欢了。
+
+> 原文地址：[http://stackoverflow.com/questions/109383/how-to-sort-a-mapkey-value-on-the-values-in-java](http://stackoverflow.com/questions/109383/how-to-sort-a-mapkey-value-on-the-values-in-java)

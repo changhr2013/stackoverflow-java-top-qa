@@ -71,28 +71,27 @@
 
 * 对上述配置中已经指定了`main`函数所在类的jar包，打开命令行窗口，输入命令：
 
-```java
+```cmd
 java -jar jar包的路径/jar包的名字.jar
 ```
 
 例如：
 
-```Auto
+```cmd
 java -jar D:\my_java_project\maven_test.jar
 ```
 
 * 若在pom.xml并没有指定`main`方法所在类，那么该jar的运行应采取如下命令：
 
-```java
+```cmd
 java -cp jar包的路径/jar包的名字.jar main方法所在类的全限定名
 ```
 
 例如:
 
-```java
+```cmd
 java -cp D:\my_java_project\maven_test.jar com.my.path.MainClass
 ```
 
-#### StackOverflow地址
-
+> StackOverflow 地址
 [http://stackoverflow.com/questions/574594/how-can-i-create-an-executable-jar-with-dependencies-using-maven](http://stackoverflow.com/questions/574594/how-can-i-create-an-executable-jar-with-dependencies-using-maven)

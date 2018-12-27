@@ -1,23 +1,25 @@
 ## 如何在整数左填充0
 
 ### 问题
+
 如何在整数左填充0
 举例 1 = "0001"
 
-
-### 答案一，String.format
+### 答案一：String.format
 
     String.format("%05d", yournumber);
 
 用0填充，总长度为5
 https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html
 
-### 答案二，ApacheCommonsLanguage
+### 答案二：ApacheCommonsLanguage
+
 如果需要在Java 1.5前使用，可以利用 Apache Commons Language 方法
 
     org.apache.commons.lang.StringUtils.leftPad(String str, int size, '0')
 
-### 答案三，DecimalFormat
+### 答案三：DecimalFormat
+
     import java.text.DecimalFormat;
     class TestingAndQualityAssuranceDepartment
     {
@@ -30,6 +32,7 @@ https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html
     }
 
 ### 答案四，自己实现
+
 如果效率很重要的话，相比于 String.format 函数的可以自己实现
 
     /**
@@ -53,7 +56,7 @@ https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html
 
         if(value == 0){
             len = 1;
-        } else{         
+        } else {
             for(; value != 0; len ++){
                 value /= 10;
             }
@@ -71,7 +74,7 @@ https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html
 
         sb.append(in);
 
-        return sb.toString();       
+        return sb.toString();
     }
 
  效率对比
@@ -90,7 +93,7 @@ https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html
         System.out.println("Own function: " + ((System.nanoTime() - start) / 1000000) + "ms");
 
         // Using String.format
-        rdm = new Random(0);        
+        rdm = new Random(0);
         start = System.nanoTime();
 
         for(int i = 10000000; i != 0; i--){
@@ -104,6 +107,7 @@ https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html
   String.format：38134ms
 
 ### 答案，Google Guava
+
 Maven：
 
     <dependency>
@@ -116,8 +120,6 @@ Maven：
     Strings.padStart("7", 3, '0') returns "007"
     Strings.padStart("2020", 3, '0') returns "2020"
 注意：
-Guava 是非常有用的库，它提供了很多有用的功能，包括了Collections, Caches, Functional idioms, Concurrency, Strings, Primitives, Ranges, IO, Hashing, EventBus等
+Guava 是非常有用的库，它提供了很多有用的功能，包括了 Collections, Caches, Functional idioms, Concurrency, Strings, Primitives, Ranges, IO, Hashing, EventBus 等
 
-
-stackoverflow原址：
-http://stackoverflow.com/questions/473282/how-can-i-pad-an-integers-with-zeros-on-the-left
+原文链址：[http://stackoverflow.com/questions/473282/how-can-i-pad-an-integers-with-zeros-on-the-left](http://stackoverflow.com/questions/473282/how-can-i-pad-an-integers-with-zeros-on-the-left)

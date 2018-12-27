@@ -2,7 +2,7 @@
 
 ## 问题
 
-将`Throwable.getStackTrace()`的结果转换为一个字符串来描述堆栈信息的最简单的方法是什么
+将 `Throwable.getStackTrace()` 的结果转换为一个字符串来描述堆栈信息的最简单的方法是什么
 
 ### 最佳答案
 
@@ -41,5 +41,4 @@ public String stackTraceToString(Throwable e) {
 }
 ````
 
-stackoverflow链接：
-http://stackoverflow.com/questions/1149703/how-can-i-convert-a-stack-trace-to-a-string
+> stackoverflow 链接：[http://stackoverflow.com/questions/1149703/how-can-i-convert-a-stack-trace-to-a-string](http://stackoverflow.com/questions/1149703/how-can-i-convert-a-stack-trace-to-a-string)
